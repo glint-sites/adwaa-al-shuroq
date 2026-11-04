@@ -1,0 +1,23 @@
+{
+  "design-reel.mp4": {
+    "source": "https://www.instagram.com/design._decor/reel/DeaGM8Eiw71/",
+    "description": "Company interior design presentation, not claimed as completed project footage",
+    "original_dimensions": [
+      1280,
+      720
+    ],
+    "duration_seconds": 12,
+    "delivery": "H.264, muted, no audio track, faststart"
+  },
+  "renovation-reel.mp4": {
+    "source": "https://www.instagram.com/design._decor/reel/De4Ndd0CnKJ/",
+    "description": "Company-posted renovation sequence showing initial room, ceiling work and finished interior",
+    "original_dimensions": [
+      720,
+      1280
+    ],
+    "duration_seconds": 8.426966,
+    "delivery": "Transcoded VP9 to H.264 without upscaling, no audio track, faststart"
+  },
+  "posters": "Frames extracted from the corresponding downloaded videos; no generated content or screenshot interfaces."
+}

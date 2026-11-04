@@ -1,4 +1,5 @@
 function initPage(isLanguageChange=false){
+if(typeof initProjectMedia==='function')initProjectMedia();
 const nav=document.getElementById('nav'),menu=document.querySelector('.menu');
 function closeMenu(){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');nav.querySelectorAll('details').forEach(d=>d.open=false)}
 menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open))});
