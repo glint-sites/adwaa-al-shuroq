@@ -7,11 +7,12 @@
     ]
   },
   "paint.webp": {
-    "source": "AI-generated painting-service illustration, edited to show only a painted wall and painting tools; no people",
+    "source": "AI-generated painting tools and wall, no person; native resolution retained",
     "size": [
       1536,
       1024
-    ]
+    ],
+    "encoding": "WebP quality 98"
   },
   "gypsum.webp": {
     "source": "https://shuroqmuqawalat.com/ (original uploaded image, not optimizer thumbnail)",
@@ -19,7 +20,8 @@
     "size": [
       1200,
       1600
-    ]
+    ],
+    "encoding": "Exact original uploaded WebP bytes, without another lossy encode"
   },
   "project1.webp": {
     "source": "https://shuroqmuqawalat.com/ (original uploaded image, not optimizer thumbnail)",
@@ -27,7 +29,8 @@
     "size": [
       1200,
       1600
-    ]
+    ],
+    "encoding": "Exact original uploaded WebP bytes, without another lossy encode"
   },
   "floor.webp": {
     "source": "https://shuroqmuqawalat.com/ (original uploaded image, not optimizer thumbnail)",
@@ -35,7 +38,8 @@
     "size": [
       1200,
       1600
-    ]
+    ],
+    "encoding": "Exact original uploaded WebP bytes, without another lossy encode"
   },
   "project2.webp": {
     "source": "https://shuroqmuqawalat.com/ (original uploaded image, not optimizer thumbnail)",
@@ -43,7 +47,8 @@
     "size": [
       1200,
       1600
-    ]
+    ],
+    "encoding": "Exact original uploaded WebP bytes, without another lossy encode"
   },
   "interior.webp": {
     "source": "https://shuroqmuqawalat.com/ (original uploaded image, not optimizer thumbnail)",
@@ -51,7 +56,8 @@
     "size": [
       1920,
       2190
-    ]
+    ],
+    "encoding": "Exact original uploaded WebP bytes, without another lossy encode"
   },
   "about.webp": {
     "source": "https://shuroqmuqawalat.com/ (original uploaded image, not optimizer thumbnail)",
@@ -59,7 +65,8 @@
     "size": [
       1920,
       2190
-    ]
+    ],
+    "encoding": "Exact original uploaded WebP bytes, without another lossy encode"
   },
   "project3.webp": {
     "source": "https://shuroqmuqawalat.com/ (original uploaded image, not optimizer thumbnail)",
@@ -67,6 +74,15 @@
     "size": [
       1920,
       2190
-    ]
+    ],
+    "encoding": "Exact original uploaded WebP bytes, without another lossy encode"
+  },
+  "herohq.webp": {
+    "source": "AI-generated architectural concept, native output retained without upscaling",
+    "size": [
+      1672,
+      941
+    ],
+    "encoding": "WebP quality 98"
   }
 }

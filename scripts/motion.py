@@ -6,14 +6,12 @@ def add_motion(html, lang, service=None):
     s=BeautifulSoup(html,'html.parser')
     def frag(markup):return BeautifulSoup(markup,'html.parser')
     if service is None:
-        image=s.select_one('.hero-photo');image['src']='/assets/media/design-poster.webp';image['width']='1280';image['height']='720'
-        image['alt']=tr('Interior design presentation from Adwaa Al Shuroq’s Instagram','عرض تصاميم داخلية من حساب أضواء الشروق على إنستغرام')
-        image.insert_after(frag(f'<video class="hero-video" data-media-key="design" muted playsinline loop preload="none" poster="/assets/media/design-poster.webp" aria-label="{tr("Interior design reel from the company Instagram","فيديو تصاميم داخلية من حساب المؤسسة على إنستغرام")}"><source src="/assets/media/design-reel-smooth.mp4" type="video/mp4"></video>'))
-        caption=s.select_one('.hero-caption');caption.select_one('span').string=tr('DESIGN REEL · @DESIGN._DECOR','عرض تصاميم · @DESIGN._DECOR')
-        caption.append(frag(f'<button type="button" data-media-toggle aria-controls="hero-film" data-play-label="{tr("Play video","تشغيل الفيديو")}" data-pause-label="{tr("Pause video","إيقاف الفيديو")}">{tr("Play video","تشغيل الفيديو")} ▷</button>'))
+        image=s.select_one('.hero-photo');image['src']='/assets/herohq.webp';image['width']='1672';image['height']='941'
+        image['alt']=tr('Illustrative interior concept with detailed gypsum ceilings, painted walls and oak finishes','تصور توضيحي لمساحة بأسقف جبسية وتشطيبات دهان وخشب بلوط')
+        panel=s.select_one('.hero-detail');panel.clear()
+        panel.append(frag(f'<p class="eyebrow">{tr("DESIGN IDEAS IN MOTION","أفكار وتصاميم متحركة")}</p><video class="hero-video" data-media-key="design" muted playsinline loop preload="none" poster="/assets/media/design-poster.webp" aria-label="{tr("Interior design reel from the company Instagram","فيديو تصاميم داخلية من حساب المؤسسة على إنستغرام")}"><source src="/assets/media/design-reel-smooth.mp4" type="video/mp4"></video><div class="hero-reel-caption"><span>@design._decor</span><button type="button" data-media-toggle aria-controls="hero-film" data-play-label="{tr("Play video","تشغيل الفيديو")}" data-pause-label="{tr("Pause video","إيقاف الفيديو")}">{tr("Play video","تشغيل الفيديو")} ▷</button></div><a href="https://www.instagram.com/design._decor/reel/DeaGM8Eiw71/" target="_blank" rel="noopener">{tr("View the original design reel","شاهد عرض التصاميم الأصلي")} ↗</a>'))
+        caption=s.select_one('.hero-caption');caption.select_one('span').string=tr('ILLUSTRATIVE INTERIOR CONCEPT','تصور توضيحي للتشطيبات')
         s.select_one('.hero-video')['id']='hero-film'
-        # Keep source credit accessible without adding another layer over the headline.
-        s.select_one('.hero-note').append(frag(f' <a href="https://www.instagram.com/design._decor/reel/DeaGM8Eiw71/" target="_blank" rel="noopener">{tr("View the design reel","شاهد عرض التصاميم")} ↗</a>'))
     if service is None or service=='renovation-finishing':
         title=tr('A space, reimagined.<br><em>See the transformation.</em>','مساحة تتجدد.<br><em>شاهد التحول.</em>')
         intro=tr('A short renovation sequence shared by the team: from exposed surfaces and ceiling work to a finished, brighter interior. Watch the original footage, right here.','لقطات تجديد شاركها الفريق: من الأعمال الأولية وتجهيز الأسقف إلى مساحة مكتملة وأكثر إشراقاً. شاهد الفيديو الأصلي هنا.')
