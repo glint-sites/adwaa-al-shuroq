@@ -1,14 +1,16 @@
 function initPage(isLanguageChange=false){
 const nav=document.getElementById('nav'),menu=document.querySelector('.menu');
-function closeMenu(){nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}
+function closeMenu(){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');nav.querySelectorAll('details').forEach(d=>d.open=false)}
 menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open))});
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){closeMenu();menu.focus()}});
 document.addEventListener('click',e=>{if(!nav.contains(e.target)&&!menu.contains(e.target))closeMenu()});
+nav.querySelectorAll('details').forEach(details=>details.addEventListener('keydown',event=>{if(event.key==='Escape'){details.open=false;details.querySelector('summary').focus()}}));
 const form=document.getElementById('enquiry');
-try{const draft=JSON.parse(sessionStorage.getItem('adwaa-draft'));if(draft)for(const key of ['name','phone','details'])form.elements[key].value=draft[key]||'';if(draft&&Number.isInteger(draft.serviceIndex))form.elements.service.selectedIndex=draft.serviceIndex}catch{}
+try{const draft=JSON.parse(sessionStorage.getItem('adwaa-draft'));if(draft)for(const key of ['name','phone','location','details'])form.elements[key].value=draft[key]||'';if(draft&&Number.isInteger(draft.serviceIndex))form.elements.service.selectedIndex=draft.serviceIndex}catch{}
+if(!isLanguageChange&&document.body.dataset.defaultService!==undefined)form.elements.service.selectedIndex=Number(document.body.dataset.defaultService);
 form.addEventListener('input',()=>{try{sessionStorage.setItem('adwaa-draft',JSON.stringify({...Object.fromEntries(new FormData(form)),serviceIndex:form.elements.service.selectedIndex}))}catch{}});
-form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const d=Object.fromEntries(new FormData(form));const title=document.documentElement.lang==='ar'?'طلب معاينة مجانية':'Free site visit enquiry';location.href='https://wa.me/966535056668?text='+encodeURIComponent(`${title}\n${d.name}\n${d.phone}\n${d.service}\n${d.details}`)});
+form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const d=Object.fromEntries(new FormData(form));const title=document.documentElement.lang==='ar'?'طلب معاينة مجانية':'Free site visit enquiry';location.href='https://wa.me/966535056668?text='+encodeURIComponent(`${title}\n${d.name}\n${d.phone}\n${d.service}\n${d.location||''}\n${d.details}`)});
 
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(!reduce&&!isLanguageChange&&'IntersectionObserver' in window){
@@ -18,7 +20,6 @@ if(!reduce&&!isLanguageChange&&'IntersectionObserver' in window){
 document.querySelectorAll('[data-enquiry-service]').forEach(a=>a.addEventListener('click',()=>{form.elements.service.selectedIndex=Number(a.dataset.enquiryService);form.dispatchEvent(new Event('input',{bubbles:true}));}));
 const galleryDialog=document.getElementById('gallery-dialog');
 document.querySelectorAll('[data-gallery]').forEach(button=>button.addEventListener('click',()=>{const img=button.querySelector('img');galleryDialog.querySelector('img').src=img.src;galleryDialog.querySelector('img').alt=img.alt;galleryDialog.querySelector('p').textContent=button.closest('figure').querySelector('figcaption strong').textContent;galleryDialog.showModal();}));
-document.querySelectorAll('[data-buy]').forEach(button=>button.addEventListener('click',()=>document.getElementById('buy-dialog').showModal()));
 document.querySelectorAll('dialog').forEach(dialog=>{dialog.querySelector('[data-close]').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close()}})});
 const language=document.querySelector('[data-lang-switch]');
 const preload=()=>loadLanguage(language.href).catch(()=>{});
