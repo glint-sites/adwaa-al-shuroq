@@ -8,7 +8,7 @@ def add_motion(html, lang, service=None):
     if service is None:
         image=s.select_one('.hero-photo');image['src']='/assets/media/design-poster.webp';image['width']='1280';image['height']='720'
         image['alt']=tr('Interior design presentation from Adwaa Al Shuroq’s Instagram','عرض تصاميم داخلية من حساب أضواء الشروق على إنستغرام')
-        image.insert_after(frag(f'<video class="hero-video" data-media-key="design" muted playsinline loop preload="none" poster="/assets/media/design-poster.webp" aria-label="{tr("Interior design reel from the company Instagram","فيديو تصاميم داخلية من حساب المؤسسة على إنستغرام")}"><source src="/assets/media/design-reel.mp4" type="video/mp4"></video>'))
+        image.insert_after(frag(f'<video class="hero-video" data-media-key="design" muted playsinline loop preload="none" poster="/assets/media/design-poster.webp" aria-label="{tr("Interior design reel from the company Instagram","فيديو تصاميم داخلية من حساب المؤسسة على إنستغرام")}"><source src="/assets/media/design-reel-smooth.mp4" type="video/mp4"></video>'))
         caption=s.select_one('.hero-caption');caption.select_one('span').string=tr('DESIGN REEL · @DESIGN._DECOR','عرض تصاميم · @DESIGN._DECOR')
         caption.append(frag(f'<button type="button" data-media-toggle aria-controls="hero-film" data-play-label="{tr("Play video","تشغيل الفيديو")}" data-pause-label="{tr("Pause video","إيقاف الفيديو")}">{tr("Play video","تشغيل الفيديو")} ▷</button>'))
         s.select_one('.hero-video')['id']='hero-film'
