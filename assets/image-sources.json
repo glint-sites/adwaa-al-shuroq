@@ -1,0 +1,72 @@
+{
+  "hero.webp": {
+    "source": "AI-generated architectural illustration",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  "paint.webp": {
+    "source": "AI-generated painting-service illustration",
+    "size": [
+      1536,
+      1024
+    ]
+  },
+  "gypsum.webp": {
+    "source": "https://shuroqmuqawalat.com/ (original uploaded image, not optimizer thumbnail)",
+    "original_index": 3,
+    "size": [
+      1200,
+      1600
+    ]
+  },
+  "project1.webp": {
+    "source": "https://shuroqmuqawalat.com/ (original uploaded image, not optimizer thumbnail)",
+    "original_index": 3,
+    "size": [
+      1200,
+      1600
+    ]
+  },
+  "floor.webp": {
+    "source": "https://shuroqmuqawalat.com/ (original uploaded image, not optimizer thumbnail)",
+    "original_index": 6,
+    "size": [
+      1200,
+      1600
+    ]
+  },
+  "project2.webp": {
+    "source": "https://shuroqmuqawalat.com/ (original uploaded image, not optimizer thumbnail)",
+    "original_index": 6,
+    "size": [
+      1200,
+      1600
+    ]
+  },
+  "interior.webp": {
+    "source": "https://shuroqmuqawalat.com/ (original uploaded image, not optimizer thumbnail)",
+    "original_index": 16,
+    "size": [
+      1920,
+      2190
+    ]
+  },
+  "about.webp": {
+    "source": "https://shuroqmuqawalat.com/ (original uploaded image, not optimizer thumbnail)",
+    "original_index": 16,
+    "size": [
+      1920,
+      2190
+    ]
+  },
+  "project3.webp": {
+    "source": "https://shuroqmuqawalat.com/ (original uploaded image, not optimizer thumbnail)",
+    "original_index": 16,
+    "size": [
+      1920,
+      2190
+    ]
+  }
+}
