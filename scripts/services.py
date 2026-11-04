@@ -37,6 +37,7 @@ def enhance_home(html, lang):
     def tr(en, arabic): return arabic if ar else en
     s = BeautifulSoup(html, 'html.parser')
     def frag(markup): return BeautifulSoup(markup, 'html.parser')
+    mobile=s.select_one('.menu');label=mobile.get_text(strip=True);mobile['aria-label']=label;mobile.clear();mobile.append(frag(f'<span class="menu-label">{label}</span><span class="menu-icon" aria-hidden="true"></span>'))
     nav = s.select_one('#nav')
     menu = s.new_tag('details', attrs={'class':'services-nav'})
     menu.append(frag(f'<summary>{tr("Services","خدماتنا")} <span aria-hidden="true">⌄</span></summary><div class="services-panel">'+''.join(f'<a href="{url(lang,d["slug"])}">{d["label"][ar]}</a>' for d in SERVICES)+f'<a class="all-services" href="#services">{tr("All services","جميع الخدمات")} ↗</a></div>'))
@@ -76,6 +77,9 @@ def build_service_pages(home, lang):
             alternate['href']='https://glintsites.com/adwaa-al-shuroq'+url(alternate['hreflang'],d['slug'])
         s.select_one('[data-lang-switch]')['href']=url('en' if ar else 'ar',d['slug'])
         s.select_one('.brand')['href']=url(lang)
+        for link in s.select('#nav a[href]'):
+            if link['href']==url(lang,d['slug']):link['aria-current']='page'
+        s.select_one('.services-nav')['data-active']='true'
         # All global homepage anchors retain a real destination from detail pages.
         for link in s.select('header a[href^="#"],footer a[href^="#"]'):
             if link['href']!='#contact':link['href']=url(lang)+link['href']
