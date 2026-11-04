@@ -45,7 +45,6 @@ def polish(html, lang):
     s.select_one('#contact .contact-grid>div>p:not(.eyebrow)').string=tr('Choose your service and tell us about the space. WhatsApp will open with your message ready to send to the team.','اختر الخدمة وأخبرنا عن مساحتك. سيفتح واتساب برسالتك جاهزة للإرسال إلى الفريق.')
     s.select_one('form').insert(0,frag(f'<div class="form-heading"><h3>{tr("Request your free site visit","اطلب معاينتك المجانية")}</h3><p>{tr("The first step towards your refreshed space.","الخطوة الأولى نحو مساحتك الجديدة.")}</p></div>'))
     s.select_one('textarea')['placeholder']=tr('City, type of work, approximate room size…','المدينة، نوع العمل، مساحة الغرفة التقريبية…')
-    s.select_one('header').insert_after(frag(f'<div class="preview-strip"><span>{tr("A preview by Glint Sites","معاينة من Glint Sites")}</span><button type="button" data-buy>{tr("Make this your website","اجعل هذا موقعك")} ↗</button></div>'))
     buy_title=tr('Show your work.<br>Make the next enquiry easier.','موقع يعرض أعمالك.<br>ويجعل التواصل أسهل.')
     buy_text=tr('This is a website concept for Adwaa Al Shuroq. Your photos, services and content can be refined before approval, then published on your business domain.','هذا تصور لموقع أضواء الشروق. يمكن تخصيص الصور والخدمات والمحتوى قبل الموافقة، ثم نشر الموقع على نطاق المؤسسة.')
     buy_list=tr(['Complete English & Arabic editions','Responsive design for phones & computers','Services, image gallery & WhatsApp enquiries'],['نسختان كاملتان بالعربية والإنجليزية','تصميم متجاوب للجوال والكمبيوتر','خدمات ومعرض صور وطلبات معاينة عبر واتساب'])

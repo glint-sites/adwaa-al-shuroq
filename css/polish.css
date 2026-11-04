@@ -21,3 +21,9 @@ dialog{border:0;color:var(--ink);background:var(--paper);padding:40px;max-width:
 .preview-strip{position:sticky;top:96px;z-index:9}.preview-strip button{min-height:28px}html{scroll-padding-top:150px}
 @media(max-width:700px){.preview-strip{top:78px}html{scroll-padding-top:135px}nav.open{top:calc(100% + 44px)}}
 @media(prefers-reduced-motion:reduce){.hero-detail{animation:none}}
+
+/* Let the hero follow the navigation directly, with less space above the copy. */
+html{scroll-padding-top:110px}.hero{height:600px;min-height:600px;align-items:flex-start}.hero-content{padding-block:48px 64px}.hero-detail{bottom:70px}
+@media(max-width:800px){.hero{height:570px;min-height:570px}}
+@media(max-width:700px){html{scroll-padding-top:90px}nav.open{top:100%}}
+@media(max-width:600px){.hero{height:auto;min-height:0}.hero-content,html[lang=ar] .hero-content{padding-block:30px 64px}}
