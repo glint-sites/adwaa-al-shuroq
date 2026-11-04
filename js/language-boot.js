@@ -24,7 +24,7 @@
     if (!block) return;
     const header = document.getElementById('site-header');
     const apply = () => window.scrollTo({top:Math.max(0,block.getBoundingClientRect().top + window.scrollY +
-      p.ratio * block.offsetHeight - (header ? header.offsetHeight : 0)),behavior:'instant'});
+      p.ratio * block.offsetHeight - (header ? header.offsetHeight : 0) - (document.querySelector('.preview-strip')?.offsetHeight || 0)),behavior:'instant'});
     apply();
     // Arabic font metrics can settle after the initial pre-rendered layout.
     if (document.fonts && window.requestAnimationFrame) {
